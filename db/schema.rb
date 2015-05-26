@@ -11,10 +11,81 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526130748) do
+ActiveRecord::Schema.define(version: 20150526142434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "article_id"
+    t.integer  "question_id"
+    t.integer  "ressource_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "categories", ["article_id"], name: "index_categories_on_article_id", using: :btree
+  add_index "categories", ["question_id"], name: "index_categories_on_question_id", using: :btree
+  add_index "categories", ["ressource_id"], name: "index_categories_on_ressource_id", using: :btree
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.integer  "question_id"
+    t.integer  "ressource_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "favorites", ["article_id"], name: "index_favorites_on_article_id", using: :btree
+  add_index "favorites", ["question_id"], name: "index_favorites_on_question_id", using: :btree
+  add_index "favorites", ["ressource_id"], name: "index_favorites_on_ressource_id", using: :btree
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
+
+  create_table "ressources", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ressources", ["user_id"], name: "index_ressources_on_user_id", using: :btree
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.integer  "question_id"
+    t.integer  "ressource_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "reviews", ["article_id"], name: "index_reviews_on_article_id", using: :btree
+  add_index "reviews", ["question_id"], name: "index_reviews_on_question_id", using: :btree
+  add_index "reviews", ["ressource_id"], name: "index_reviews_on_ressource_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -40,4 +111,36 @@ ActiveRecord::Schema.define(version: 20150526130748) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "votes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "article_id"
+    t.integer  "question_id"
+    t.integer  "ressource_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "votes", ["article_id"], name: "index_votes_on_article_id", using: :btree
+  add_index "votes", ["question_id"], name: "index_votes_on_question_id", using: :btree
+  add_index "votes", ["ressource_id"], name: "index_votes_on_ressource_id", using: :btree
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
+
+  add_foreign_key "articles", "users"
+  add_foreign_key "categories", "articles"
+  add_foreign_key "categories", "questions"
+  add_foreign_key "categories", "ressources"
+  add_foreign_key "favorites", "articles"
+  add_foreign_key "favorites", "questions"
+  add_foreign_key "favorites", "ressources"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "questions", "users"
+  add_foreign_key "ressources", "users"
+  add_foreign_key "reviews", "articles"
+  add_foreign_key "reviews", "questions"
+  add_foreign_key "reviews", "ressources"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "votes", "articles"
+  add_foreign_key "votes", "questions"
+  add_foreign_key "votes", "ressources"
+  add_foreign_key "votes", "users"
 end
