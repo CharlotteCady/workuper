@@ -1,4 +1,12 @@
 class User < ActiveRecord::Base
+  has_many :articles
+  has_many :questions
+  has_many :ressources
+  has_many :votes
+  has_many :reviews
+  has_many :favorites
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
