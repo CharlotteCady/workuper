@@ -1,15 +1,14 @@
 /* -------------------------------------
  * Colors & Fonts
  * ------------------------------------- */
-$navbar-color: $gray-light;
-$navbar-hover-color: $yellow;
-$navbar-font-family: $navbar-font;
+$navbar-color: white;
+$navbar-hover-color: $blue;
 $navbar-font-size: 14px;
-$navbar-text-transform: capitalize;
+$navbar-text-transform: uppercase;
 $navbar-font-weight: 300;
-$navbar-letter-spacing: 1.5px;
+$navbar-letter-spacing: 1px;
 $navbar-font-family: $navbar-font;
-$navbar-bg: white;
+$navbar-bg: black;
 
 /* -------------------------------------
  * Box model
@@ -17,24 +16,26 @@ $navbar-bg: white;
 $navbar-height: 50px;
 $navbar-vertical-padding: 10px;
 $navbar-horizontal-padding: 20px;
-$navbar-border-bottom-width: 1px;
+$navbar-border-bottom-width: 0px;
 $navbar-border-bottom-color: $gray-lighter;
+$navbar-border-top: 3px solid $blue;
 
 /* -------------------------------------
  * Navbar button
  * ------------------------------------- */
 $navbar-btn-height: 40px;
-$navbar-btn-bg: lightgrey;
+$navbar-btn-bg: transparent;
 $navbar-btn-color: white;
 $navbar-btn-horizontal-padding: 10px;
-$navbar-btn-radius: 2px;
+$navbar-btn-radius: 1px;
+$navbar-btn-border: 1px solid white;
 
 /* -------------------------------------
  * Navbar profile picture
  * ------------------------------------- */
 $navbar-profile-radius: 50%;
 $navbar-profile-border-color: white;
-$navbar-profile-border-width: 2px;
+$navbar-profile-border-width: 1px;
 
 /* -------------------------------------
  * SCSS code
@@ -50,6 +51,7 @@ $navbar-profile-border-width: 2px;
   padding-left: $navbar-horizontal-padding;
   padding-right: $navbar-horizontal-padding;
   border-bottom: $navbar-border-bottom-width solid $navbar-border-bottom-color;
+  border-top: $navbar-border-top;
   min-height: 0;
   transition: background 0.4s ease;
 
@@ -84,19 +86,29 @@ $navbar-profile-border-width: 2px;
     padding: 0 $navbar-btn-horizontal-padding;
     color: $navbar-btn-color;
     border-radius: $navbar-btn-radius;
+    border: $navbar-btn-border;
     margin-top: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
     margin-bottom: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
     font-weight: bold;
     background-color: $navbar-btn-bg;
     font-size: 12px;
     &:hover{
-      background-color: darken($navbar-btn-bg, 30%);
+      background-color: $blue;
     }
   }
 
   .navbar-brand img, .navbar-brand svg {
     height: $navbar-height;
     padding: 0px;
+  }
+
+  #logo {
+    font-family: $logo-font;
+    font-size: 50px;
+    color: white;
+    text-transform: lowercase;
+    margin-top: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
+    margin-bottom: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
   }
 
   .img-avatar{
