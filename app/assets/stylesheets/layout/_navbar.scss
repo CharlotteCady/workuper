@@ -7,7 +7,7 @@ $navbar-font-size: 14px;
 $navbar-text-transform: uppercase;
 $navbar-font-weight: 300;
 $navbar-letter-spacing: 1px;
-$navbar-font-family: $navbar-font;
+$navbar-font-family: $my-font;
 $navbar-bg: black;
 
 /* -------------------------------------
@@ -40,6 +40,10 @@ $navbar-profile-border-width: 1px;
 /* -------------------------------------
  * SCSS code
  * ------------------------------------- */
+.navbar {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 .navbar-wagon {
   background: $navbar-bg;
   font-family: $navbar-font-family;
