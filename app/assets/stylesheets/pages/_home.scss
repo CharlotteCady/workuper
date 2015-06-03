@@ -1,0 +1,149 @@
+// Bannière
+// ===============================================================
+
+#banner {
+  background: image-url("home.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  height: 600px;
+  position: relative;
+  h1 {
+    margin-top: 180px;
+  }
+}
+#banner::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.fa-angle-down {
+  font-size: 35px;
+  color: white;
+  &:hover {
+    color: $blue;
+  }
+}
+
+
+// Notre mission
+// ===============================================================
+
+#notre-mission {
+  background: image-url("map.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  height: 400px;
+  position: relative;
+}
+#notre-mission::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// Notre communauté
+// ===============================================================
+
+#communaute {
+  background: image-url("dream.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  height: 400px;
+  position: relative;
+}
+#communaute::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// Qui sommes nous ?
+// ===============================================================
+
+#team {
+  img {
+    width: 250px;
+    padding-top: 50px;
+    padding-bottom: 15px;
+  }
+  .btn {
+    width: 150px;
+  }
+  .fa-twitter {
+    font-size: 30px;
+    padding-top: 15px;
+  }
+}
+
+
+// Pole emploi
+// ===============================================================
+
+#pole-emploi {
+  background: image-url("pole-emploi.jpg") no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  height: 400px;
+  position: relative;
+  .fa-facebook {
+    font-size: 40px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    margin-top: 20px;
+    padding-top: 5px;
+    &:hover {
+      background-color: $blue;
+    }
+  }
+}
+#pole-emploi::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// Contact
+// ===============================================================
+
+#contact {
+  background-color: $gray;
+  .trait {
+    border-color: white;
+  }
+  .home-header {
+    color: white;
+  }
+  #form {
+    padding-top: 50px;
+    input {
+      margin-bottom: 20px;
+    }
+  }
+}
