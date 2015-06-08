@@ -3,9 +3,9 @@
  * ------------------------------------- */
 $navbar-color: white;
 $navbar-hover-color: $blue;
-$navbar-font-size: 14px;
+$navbar-font-size: 20px;
 $navbar-text-transform: uppercase;
-$navbar-font-weight: 300;
+$navbar-font-weight: 100;
 $navbar-letter-spacing: 1px;
 $navbar-font-family: $my-font;
 $navbar-bg: black;
@@ -13,8 +13,8 @@ $navbar-bg: black;
 /* -------------------------------------
  * Box model
  * ------------------------------------- */
-$navbar-height: 50px;
-$navbar-vertical-padding: 10px;
+$navbar-height: 30px;
+$navbar-vertical-padding: 13px;
 $navbar-horizontal-padding: 20px;
 $navbar-border-bottom-width: 0px;
 $navbar-border-bottom-color: $gray-lighter;
@@ -77,6 +77,11 @@ $navbar-profile-border-width: 1px;
     background-color: transparent;
   }
 
+  .navbar-menu:hover {
+    border-bottom: 2px solid $blue;
+    color: white;
+  }
+
   .navbar-brand,
   .navbar-brand:hover {
     outline: none;
@@ -93,9 +98,8 @@ $navbar-profile-border-width: 1px;
     border: $navbar-btn-border;
     margin-top: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
     margin-bottom: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
-    font-weight: bold;
     background-color: $navbar-btn-bg;
-    font-size: 12px;
+    font-size: $navbar-font-size;
     &:hover{
       background-color: $blue;
     }
@@ -108,7 +112,7 @@ $navbar-profile-border-width: 1px;
 
   #logo {
     font-family: $logo-font;
-    font-size: 50px;
+    font-size: 40px;
     color: white;
     text-transform: lowercase;
     margin-top: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
@@ -158,7 +162,7 @@ $navbar-profile-border-width: 1px;
 @media screen and (max-width: 768px) {
   .navbar-wagon {
     .navbar-brand img, .navbar-brand svg {
-      height: 50px;
+      height: 30px;
     }
     .navbar-brand, .navbar-brand:hover
      {
