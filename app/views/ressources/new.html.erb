@@ -1,2 +1,27 @@
-<h1>Ressources#new</h1>
-<p>Find me in app/views/ressources/new.html.erb</p>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1> Rédigez votre bon plan</h1>
+      <p>Vous pouvez partager tous les bons plans, adresses, sites web, blogs, formations, événements que vous aimez à la communauté</p>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="ressource-form">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-xs-2">
+          <%= image_tag current_user.picture, class: "img-circle" %>
+        </div>
+        <div class="col-xs-10">
+          <p id="nom">Création par <%= current_user.name %></p>
+          <p>Date : <%= Time.now %></p>
+        </div>
+      </div>
+      <%= render "ressource_form" %>
+    </div>
+  </div>
+</div>

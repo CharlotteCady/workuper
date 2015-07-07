@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527085110) do
+ActiveRecord::Schema.define(version: 20150630140640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,8 +82,14 @@ ActiveRecord::Schema.define(version: 20150527085110) do
     t.string   "title"
     t.string   "content"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "site"
+    t.string   "address"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "ressources", ["user_id"], name: "index_ressources_on_user_id", using: :btree
@@ -101,6 +107,19 @@ ActiveRecord::Schema.define(version: 20150527085110) do
   add_index "reviews", ["question_id"], name: "index_reviews_on_question_id", using: :btree
   add_index "reviews", ["ressource_id"], name: "index_reviews_on_ressource_id", using: :btree
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
+
+  create_table "sub_categories", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "article_id"
+    t.integer  "question_id"
+    t.integer  "ressource_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "sub_categories", ["article_id"], name: "index_sub_categories_on_article_id", using: :btree
+  add_index "sub_categories", ["question_id"], name: "index_sub_categories_on_question_id", using: :btree
+  add_index "sub_categories", ["ressource_id"], name: "index_sub_categories_on_ressource_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -155,6 +174,9 @@ ActiveRecord::Schema.define(version: 20150527085110) do
   add_foreign_key "reviews", "questions"
   add_foreign_key "reviews", "ressources"
   add_foreign_key "reviews", "users"
+  add_foreign_key "sub_categories", "articles"
+  add_foreign_key "sub_categories", "questions"
+  add_foreign_key "sub_categories", "ressources"
   add_foreign_key "votes", "articles"
   add_foreign_key "votes", "questions"
   add_foreign_key "votes", "ressources"
