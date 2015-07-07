@@ -17,13 +17,13 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%= link_to t(".top_call_to_action", default: "GUIDE"), "#", class: "navbar-menu" %>
+          <%= link_to t(".top_call_to_action", default: "GUIDE"), ressources_path, class: "navbar-menu" %>
         </li>
         <li>
-          <%= link_to t(".top_call_to_action", default: "QUESTIONS"), "#", class: "navbar-menu" %>
+          <%= link_to t(".top_call_to_action", default: "QUESTIONS"), questions_path, class: "navbar-menu" %>
         </li>
         <li>
-          <%= link_to t(".top_call_to_action", default: "INSPIRATIONS"), "#", class: "navbar-menu" %>
+          <%= link_to t(".top_call_to_action", default: "INSPIRATIONS"), articles_path, class: "navbar-menu" %>
         </li>
         <% if user_signed_in? %>
 

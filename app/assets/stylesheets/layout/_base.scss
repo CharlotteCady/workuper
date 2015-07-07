@@ -4,30 +4,37 @@
  * Before writing in this file, look if there is not
  * already a Bootstrap SCSS variable that does the same job
  * ------------------------------------- */
+#banner {
+  h1 {
+    font-size: 60px;
+    color: white;
+  }
+}
 
- h1 {
-  font-size: 60px;
-  color: white;
- }
+h1 {
+  font-size: 40px;
+  color: black;
+}
 
- h2 {
+
+h2 {
   font-size: 60px;
   color: white;
   // background-color: rgba(0, 0, 0, 0.498039);
  }
 
- .home-header {
+.home-header {
   font-family: $my-font;
   font-size: 40px;
   color: black;
   // margin-top: 20px;
  }
 
- p {
+p {
   font-size: 18px;
  }
 
- .little-header {
+.little-header {
   font-family: $my-font;
   font-size: 20px;
   color: black;
