@@ -13,14 +13,9 @@ class RessourcesController < ApplicationController
   end
 
   def new
-  # if current_user
     @ressource = Ressource.new
     @categories = Category.all
     @sub_categories = SubCategory.all
-  # else
-    # flash[:alert] = "Vous devez être connecté pour partager un bon plan"
-    # redirect_to
-  # end
   end
 
   def create
@@ -38,7 +33,7 @@ class RessourcesController < ApplicationController
   private
 
   def ressource_params
-    params.require(:ressource).permit(:categories, :sub_categories, :title, :content, :picture, :site, :address)
+    params.require(:ressource).permit(:title, :content, :picture, :site, :address, :category_id, :sub_category_id)
   end
 
   def set_ressource

@@ -1,0 +1,28 @@
+#sidebar_simple {
+  padding-top: 25px;
+  padding-left: 20px;
+  background-color: #E6E6E6;
+  height: 100%;
+  position: fixed;
+  width: 200px;
+  h2 {
+    font-size: 22px;
+    color: black;
+  }
+  i {
+    float: right;
+    padding-right: 20px;
+  }
+  .sidebar-category:hover {
+    background-color: $gray-lighter;
+    cursor: pointer;
+  }
+  .sidebar_sub_cat {
+    transition: opacity 0.3s ease;
+      &.hidden {
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+    }
+  }
+}

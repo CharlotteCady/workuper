@@ -1,0 +1,19 @@
+#sidebar {
+  padding-top: 50px;
+  padding-left: 20px;
+  background-color: #E6E6E6;
+  height: 100%;
+  position: fixed;
+  width: 200px;
+  .btn {
+    background-color: #E6E6E6;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  ul.dropdown-menu {
+    background-color: #E6E6E6;
+    border: none;
+    box-shadow: none;
+    top: 70px;
+  }
+}

@@ -1,7 +1,7 @@
 #ressources_index {
   margin-top: 50px;
   #bonplan {
-    background: image-url("bonplan.jpg") no-repeat;
+    background: image-url("bonplan-dark.jpg") no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -12,16 +12,6 @@
     padding-right: 50px;
     padding-left: 50px;
     position: relative;
-    &::before {
-    content: "";
-    background-color: rgba(0, 0, 0, 0.4);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    }
     h1 {
       color: white;
       z-index: 10;
