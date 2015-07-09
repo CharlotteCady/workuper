@@ -8,8 +8,8 @@ class Ressource < ActiveRecord::Base
 
   validates :title, presence: true
   validates :content, presence: true
-  validates :category, presence: true
-  validates :sub_category, presence: true
+  validates :categories, presence: true
+  validates :sub_categories, presence: true
 
 
   has_attached_file :picture
