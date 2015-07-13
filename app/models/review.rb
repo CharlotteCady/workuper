@@ -1,4 +1,4 @@
-class Review < ActiveRecord::Base
+teclass Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :article
   belongs_to :question

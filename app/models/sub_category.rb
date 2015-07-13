@@ -1,5 +1,5 @@
 class SubCategory < ActiveRecord::Base
-  belongs_to :article
-  belongs_to :question
-  belongs_to :ressource
+  has_many :article
+  has_many :question
+  has_many :ressource
 end

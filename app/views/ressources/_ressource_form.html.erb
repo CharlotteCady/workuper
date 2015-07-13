@@ -10,8 +10,8 @@ as: :check_boxes pour multiple choix -->
   <%= ressource.input :address, label: "Coordonnées", placeholder: 'Fondateur: Julien Picaud - contact@moonbar.org' %>
 
 
-  <%= ressource.input :category_id, label: "Catégories", collection: @categories, as: :check_boxes %>
-  <%= ressource.input :sub_category_id, label: "Sous-Catégories", collection: @sub_categories, as: :check_boxes %>
+  <%= ressource.input :categories, label: "Catégories", collection: @categories, as: :check_boxes %>
+  <%= ressource.input :sub_categories, label: "Sous-Catégories", collection: @sub_categories, as: :check_boxes %>
 
   <%= ressource.label :picture, label: "Photo" %>
   <%= ressource.file_field :picture %>
