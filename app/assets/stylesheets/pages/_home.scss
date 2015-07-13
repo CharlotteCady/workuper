@@ -34,7 +34,7 @@
 // Le guide
 // ===============================================================
 
-#guide-caroussel i {
+#guide-caroussel i, #question-caroussel i {
   font-size: 30px;
   color: white;
   margin-bottom: 10px;
@@ -65,6 +65,13 @@
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+// C'est pour qui ?
+// ===============================================================
+
+#question-caroussel {
+  min-height: 450px;
 }
 
 // Notre communauté

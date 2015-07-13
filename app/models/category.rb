@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  belongs_to :article
-  belongs_to :question
-  belongs_to :ressource
+  has_many :articles
+  has_many :questions
+  has_many :ressources
 end
