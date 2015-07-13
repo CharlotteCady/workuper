@@ -1,7 +1,9 @@
 class Ressource < ActiveRecord::Base
   belongs_to :user
-  has_many :categories
-  has_many :sub_categories
+  has_many :categories, through: :category_ressources
+  has_many :sub_categories, through: :sub_category_ressources
+  has_many :category_ressources
+  has_many :sub_category_ressources
   has_many :votes
   has_many :reviews
   has_many :favorites
@@ -10,7 +12,6 @@ class Ressource < ActiveRecord::Base
   validates :content, presence: true
   validates :categories, presence: true
   validates :sub_categories, presence: true
-
 
   has_attached_file :picture
     # styles: { medium: "300x300>", thumb: "100x100>" }

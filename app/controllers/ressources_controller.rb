@@ -19,11 +19,11 @@ class RessourcesController < ApplicationController
   end
 
   def create
-    @categories = @ressource.categories
-    @sub_categories = @ressource.sub_categories
     @ressource = Ressource.new(ressource_params)
 
     if @ressource.save
+      @categories = @ressource.categories
+      @sub_categories = @ressource.sub_categories
       redirect_to ressource_path(@ressource)
       # vérifier le chemin pour l'id
     else
@@ -34,7 +34,7 @@ class RessourcesController < ApplicationController
   private
 
   def ressource_params
-    params.require(:ressource).permit(:title, :content, :picture, :site, :address, :categories, :sub_categories)
+    params.require(:ressource).permit(:title, :content, :picture, :site, :address, category_ids: [], sub_category_ids: [])
   end
 
   def set_ressource
